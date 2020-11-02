@@ -1,18 +1,18 @@
 package com.packing.algorithm;
 
-import com.packing.boxAction.BoxActions;
-import com.packing.boxAction.BoxActionsI;
+import com.packing.shapeAction.ShapeActions;
+import com.packing.shapeAction.ShapeActionsI;
 import com.packing.model.Box;
 
 import java.util.Map;
 
 public class Algorithm implements AlgorithmI{
     protected final Map<Integer,Box> packingBoxes;
-    BoxActionsI containerBoxActionsI;
+    ShapeActionsI containerShapeActionsI;
 
     public Algorithm(Box container, Map<Integer, Box> packingBoxes) {
         this.packingBoxes = packingBoxes;
-        this.containerBoxActionsI =new BoxActions(container);
+        this.containerShapeActionsI =new ShapeActions(container);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Algorithm implements AlgorithmI{
         for (Map.Entry<Integer, Box> entry : this.packingBoxes.entrySet()) {
             Integer integer = entry.getKey();
             Box box = entry.getValue();
-            totalSurfaceArea += (integer * (new BoxActions(box).getSurfaceArea()));
+            totalSurfaceArea += (integer * (new ShapeActions(box).getSurfaceArea()));
         }
         return totalSurfaceArea;
     }
@@ -32,14 +32,14 @@ public class Algorithm implements AlgorithmI{
         for (Map.Entry<Integer, Box> entry : this.packingBoxes.entrySet()) {
             Integer integer = entry.getKey();
             Box box = entry.getValue();
-            totalVolume += (integer * (new BoxActions(box).getVolume()));
+            totalVolume += (integer * (new ShapeActions(box).getVolume()));
         }
         return totalVolume;
     }
 
     @Override
     public double getContainerSA() {
-        return this.containerBoxActionsI.getSurfaceArea();
+        return this.containerShapeActionsI.getSurfaceArea();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Algorithm implements AlgorithmI{
 
     @Override
     public double getContainerVolume() {
-        return this.containerBoxActionsI.getVolume();
+        return this.containerShapeActionsI.getVolume();
     }
 
     @Override

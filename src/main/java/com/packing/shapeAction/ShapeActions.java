@@ -1,11 +1,12 @@
-package com.packing.boxAction;
+package com.packing.shapeAction;
 
 import com.packing.model.Box;
+import com.packing.model.Shape;
 
-public class BoxActions implements BoxActionsI {
+public class ShapeActions extends Shape implements ShapeActionsI {
     private final Box box;
 
-    public BoxActions(Box box) {
+    public ShapeActions(Box box) {
         this.box = box;
     }
 

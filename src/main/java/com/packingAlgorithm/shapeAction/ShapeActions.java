@@ -49,7 +49,7 @@ public abstract class ShapeActions extends Shape implements ShapeActionsI {
 
     public abstract boolean attemptToContain(Shape shape);
 
-    public abstract List<Shape> breakUp(Shape spaceOccupied);
+    public abstract List<ShapeActions> breakUp(ShapeActions spaceOccupied);
 
     public abstract String toFullString();
 

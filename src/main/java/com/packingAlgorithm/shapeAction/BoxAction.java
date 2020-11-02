@@ -59,10 +59,7 @@ public class BoxAction extends ShapeActions {
         return false;
     }
 
-    @Override
-    public List<Shape> breakUp(Shape spaceOccupied) {
-        return null;
-    }
+
 
     public boolean attemptToContain(Box box) {
         if (canContain(box))
